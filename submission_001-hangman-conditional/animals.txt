@@ -1,0 +1,14 @@
+dog
+fish
+bird
+cat
+squirrel
+deer
+buck
+elephant
+wildebeest
+kudu
+pig
+lion
+tiger
+leopard
