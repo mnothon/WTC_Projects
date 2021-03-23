@@ -1,6 +1,7 @@
 package za.co.wethinkcode.toyrobot.world;
 
 import za.co.wethinkcode.toyrobot.Position;
+import za.co.wethinkcode.toyrobot.maze.SimpleMazerunner;
 
 import java.util.List;
 
@@ -80,4 +81,7 @@ public interface IWorld {
      * Gives opportunity to world to draw or list obstacles.
      */
     void showObstacles();
+
+    SimpleMazerunner getMazerunner();
+
 }

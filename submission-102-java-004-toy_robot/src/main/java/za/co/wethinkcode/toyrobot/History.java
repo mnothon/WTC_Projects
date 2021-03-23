@@ -16,8 +16,4 @@ public class History {
     public void addCommand(Command command) {
         this.commandsList.add(command);
     }
-
-    public void clearHistory() {
-        this.commandsList.clear();
-    }
 }

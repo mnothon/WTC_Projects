@@ -6,11 +6,14 @@ import za.co.wethinkcode.toyrobot.Position;
  * Defines an interface for obstacles you want to place in your world.
  */
 public interface Obstacle {
+
+
     /**
      * Get X coordinate of bottom left corner of obstacle.
      * @return x coordinate
      */
     int getBottomLeftX();
+
 
     /**
      * Get Y coordinate of bottom left corner of obstacle.
@@ -18,11 +21,13 @@ public interface Obstacle {
      */
     int getBottomLeftY();
 
+
     /**
      * Gets the side of an obstacle (assuming square obstacles)
      * @return the length of one side in nr of steps
      */
     int getSize();
+
 
     /**
      * Checks if this obstacle blocks access to the specified position.
@@ -30,6 +35,7 @@ public interface Obstacle {
      * @return return `true` if the x,y coordinate falls within the obstacle's area
      */
     boolean blocksPosition(Position position);
+
 
     /**
      * Checks if this obstacle blocks the path that goes from coordinate (x1, y1) to (x2, y2).

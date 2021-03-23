@@ -9,13 +9,16 @@ public class Position {
         this.y = y;
     }
 
+
     public int getX() {
         return x;
     }
 
+
     public int getY() {
         return y;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -28,6 +31,13 @@ public class Position {
         return y == position.y;
     }
 
+
+    /**
+     * Checks whether a position is in the world zone
+     * @param topLeft - top left coordinate
+     * @param bottomRight - bottom right coordinate
+     * @return
+     */
     public boolean isIn(Position topLeft, Position bottomRight) {
         boolean withinTop = this.y <= topLeft.getY();
         boolean withinBottom = this.y >= bottomRight.getY();

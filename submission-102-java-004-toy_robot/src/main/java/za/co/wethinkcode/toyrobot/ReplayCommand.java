@@ -2,7 +2,6 @@ package za.co.wethinkcode.toyrobot;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class ReplayCommand extends Command {
     private String finalString = "";
@@ -19,9 +18,9 @@ public class ReplayCommand extends Command {
         super("replay", "reversed", argument2);
     }
 
+
     @Override
     public boolean execute(Robot target) {
-//        ArrayList<Command> commandsList = getCommandsList();
         ArrayList<Command> commandsList = target.getHistory();
         setRunningReplay(true);
         if (getArgument() == "") {
@@ -46,10 +45,17 @@ public class ReplayCommand extends Command {
         }
         target.setIsPlayingMultipleCommands(true);
         target.setStatus(getFinalString());
-        commandsList.clear();
         return true;
     }
 
+
+    /**
+     * Do replay when theres one arg.
+     * @param commandsList
+     * @param target
+     * @param arg
+     * @return
+     */
     public int doReplayOneArg(ArrayList<Command> commandsList, Robot target, String arg) {
         int size = commandsList.size();
         int argument;
@@ -74,6 +80,12 @@ public class ReplayCommand extends Command {
         return 0;
     }
 
+
+    /**
+     * Do replay when theres no arg
+     * @param commandsList
+     * @param target
+     */
     public void doReplayNoArgs(ArrayList<Command> commandsList, Robot target) {
         for (int i = 0; i < commandsList.size(); i++) {
             target.handleCommand(commandsList.get(i));
@@ -81,6 +93,14 @@ public class ReplayCommand extends Command {
         }
     }
 
+
+    /**
+     * Do replay for 1 arg
+     * @param target
+     * @param commandsList
+     * @param argument
+     * @param size
+     */
     public void doOneArgForLoop(Robot target, ArrayList<Command> commandsList, int argument, int size) {
         if (getArgument2() == "") {
             int start = size - argument;
@@ -96,6 +116,13 @@ public class ReplayCommand extends Command {
         }
     }
 
+
+    /**
+     * Do replay when theres arg-arg.
+     * @param target
+     * @param commandsList
+     * @param digits
+     */
     public void doOneArgWithHyphenForLoop(Robot target, ArrayList<Command> commandsList, String[] digits) {
         int firstNum = Integer.parseInt(digits[0]);
         int secondNum = Integer.parseInt(digits[1]);
@@ -115,6 +142,7 @@ public class ReplayCommand extends Command {
         }
     }
 
+
     public static boolean isNumeric(String strNum) {
         if (strNum == null) {
             return false;
@@ -127,9 +155,11 @@ public class ReplayCommand extends Command {
         return true;
     }
 
+
     public String getFinalString() {
         return finalString;
     }
+
 
     public void setFinalString(String finalString) {
         this.finalString = finalString;

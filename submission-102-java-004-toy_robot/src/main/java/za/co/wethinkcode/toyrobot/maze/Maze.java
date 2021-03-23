@@ -9,10 +9,13 @@ import java.util.List;
  * Interface to represent a maze. A World will be loaded with a Maze, and will delegate the work to check if a path is blocked by certain obstacles etc to this maze instance.
  */
 public interface Maze {
+
+
     /**
      * @return the list of obstacles, or an empty list if no obstacles exist.
      */
     List<Obstacle> getObstacles();
+
 
     /**
      * Checks if this maze has at least one obstacle that blocks the path that goes from coordinate (x1, y1) to (x2, y2).
@@ -23,4 +26,11 @@ public interface Maze {
      */
     boolean blocksPath(Position a, Position b);
 
+
+    /**
+     * Checks whether position in grid is blocked
+     * @param position
+     * @return boolean, true if position is blocked false if its not
+     */
+    boolean isPositionBlocked(Position position);
 }

@@ -6,6 +6,12 @@ public class SprintCommand extends Command {
         super("sprint", argument);
     }
 
+
+    /**
+     * Execute sprint method
+     * @param target
+     * @return
+     */
     @Override
     public boolean execute(Robot target) {
         int nrSteps = Integer.parseInt(getArgument());
