@@ -15,10 +15,10 @@ Run project:
  * The program takes in 2 parameters. The first being either a string "turtle", or "text". This determines which GUI the game will
    Use turtle being the Turtle GUI, text being a text based interface.
    The secpnd parameter allows the user to choose what Maze the game will use, these are the options:
-   . EmptyMaze - No maze at all
-   . SimpleMaze - One obstacle at position (1, 1)
-   . RandomMaze - Obstacles at random places on the map. Between 1 and 50.
-   . DesignedMaze - An intricate procedurally generated maze.
+   * EmptyMaze - No maze at all
+   * SimpleMaze - One obstacle at position (1, 1)
+   * RandomMaze - Obstacles at random places on the map. Between 1 and 50.
+   * DesignedMaze - An intricate procedurally generated maze.
    
 ## Build, Test & Run
 You may use IntelliJ to run your code and tests, but alternatively you can use the Maven build tool:
